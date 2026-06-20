@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVARA — Transforming Ideas Into Digital Reality</title>
+<meta name="description" content="NOVARA is a digital design studio creating immersive, cinematic web experiences powered by cutting-edge technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style (4).css">
+<style>body{overflow:hidden;}</style>
+</head>
+<body>
+
+<!-- ===================== LOADER ===================== -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-mark">
+      <svg viewBox="0 0 100 100" class="loader-ring">
+        <circle cx="50" cy="50" r="44" class="loader-ring-bg"/>
+        <circle cx="50" cy="50" r="44" class="loader-ring-fg"/>
+      </svg>
+      <span class="loader-glyph">N</span>
+    </div>
+    <div class="loader-text">
+      <span class="loader-word">NOVARA</span>
+      <span class="loader-percent" id="loaderPercent">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-spotlight" id="spotlight"></div>
+
+<!-- ===================== BACKGROUND LAYERS ===================== -->
+<canvas id="particleCanvas"></canvas>
+<div class="aurora-layer">
+  <div class="aurora a1"></div>
+  <div class="aurora a2"></div>
+  <div class="aurora a3"></div>
+</div>
+<div class="grain"></div>
+
+<!-- ===================== SCROLL PROGRESS ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" data-cursor="link">
+      <span class="logo-mark">N</span><span class="logo-text">OVARA</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-section="home"><span>Home</span></a>
+      <a href="#about" class="nav-link" data-section="about"><span>About</span></a>
+      <a href="#services" class="nav-link" data-section="services"><span>Services</span></a>
+      <a href="#work" class="nav-link" data-section="work"><span>Work</span></a>
+      <a href="#skills" class="nav-link" data-section="skills"><span>Skills</span></a>
+      <a href="#contact" class="nav-link" data-section="contact"><span>Contact</span></a>
+      <div class="nav-underline" id="navUnderline"></div>
+    </nav>
+    <a href="#contact" class="nav-cta" data-cursor="link"><span>Start a Project</span></a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-float card-1" data-depth="0.4">
+    <i class="fa-solid fa-bolt"></i>
+    <span>Real-time Rendering</span>
+  </div>
+  <div class="hero-float card-2" data-depth="0.7">
+    <i class="fa-solid fa-cube"></i>
+    <span>3D Interactions</span>
+  </div>
+  <div class="hero-float card-3" data-depth="0.5">
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
+    <span>Motion Design</span>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-reveal>
+      <span class="dot-pulse"></span> Available for select projects — 2026
+    </div>
+    <h1 class="hero-title" data-split>
+      <span class="line"><span class="word">Transforming</span></span>
+      <span class="line"><span class="word">Ideas</span> <span class="word">Into</span></span>
+      <span class="line"><span class="word gradient-word">Digital</span> <span class="word gradient-word">Reality</span></span>
+    </h1>
+    <p class="hero-subtitle" data-reveal>
+      Creating immersive experiences through cutting-edge design and technology.
+    </p>
+    <div class="hero-actions" data-reveal>
+      <a href="#work" class="btn btn-primary magnetic" data-cursor="link">
+        <span>Explore Work</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="#contact" class="btn btn-ghost magnetic" data-cursor="link">
+        <span>Get Started</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"><div class="scroll-line-fill"></div></div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="section-head">
+    <span class="section-tag" data-reveal>01 — About the Studio</span>
+    <h2 class="section-title" data-reveal>We engineer feeling<br>into every interface.</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-card profile-card" data-tilt data-reveal>
+      <div class="profile-glow"></div>
+      <div class="profile-avatar">
+        <span>NV</span>
+        <div class="profile-status"></div>
+      </div>
+      <h3>Novara Studio</h3>
+      <p>Independent design &amp; engineering collective building digital products for ambitious brands.</p>
+      <div class="profile-meta">
+        <span><i class="fa-solid fa-location-dot"></i> Remote — Worldwide</span>
+        <span><i class="fa-solid fa-clock"></i> Est. 2019</span>
+      </div>
+    </div>
+
+    <div class="about-stats" data-reveal>
+      <div class="stat-box">
+        <span class="stat-number" data-count="120">0</span><span class="stat-suffix">+</span>
+        <p>Projects Shipped</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number" data-count="48">0</span><span class="stat-suffix">M</span>
+        <p>Users Reached</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number" data-count="15">0</span>
+        <p>Design Awards</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number" data-count="99">0</span><span class="stat-suffix">%</span>
+        <p>Client Retention</p>
+      </div>
+    </div>
+
+    <div class="timeline" data-reveal>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2019</span>
+        <p>Founded with a single mission — build interfaces that feel inevitable.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2021</span>
+        <p>Expanded into motion systems &amp; 3D web experiences for global clients.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2023</span>
+        <p>Recognized across international design award circuits.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2026</span>
+        <p>Building the next generation of AI-native product interfaces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <div class="section-head">
+    <span class="section-tag" data-reveal>02 — What We Do</span>
+    <h2 class="section-title" data-reveal>Capabilities built for<br>the next decade of the web.</h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card" data-tilt data-reveal>
+      <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+      <h3>Product Design</h3>
+      <p>End-to-end UI/UX systems engineered for clarity, speed, and emotional resonance.</p>
+      <div class="service-glow"></div>
+    </div>
+    <div class="service-card" data-tilt data-reveal>
+      <div class="service-icon"><i class="fa-solid fa-cubes"></i></div>
+      <h3>3D &amp; Motion</h3>
+      <p>Real-time 3D scenes and choreographed motion that turn scrolling into a story.</p>
+      <div class="service-glow"></div>
+    </div>
+    <div class="service-card" data-tilt data-reveal>
+      <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+      <h3>Web Engineering</h3>
+      <p>Performance-obsessed front-end builds, pixel-accurate from 4K down to mobile.</p>
+      <div class="service-glow"></div>
+    </div>
+    <div class="service-card" data-tilt data-reveal>
+      <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+      <h3>AI Integration</h3>
+      <p>Embedding intelligent, adaptive interactions directly into product experiences.</p>
+      <div class="service-glow"></div>
+    </div>
+    <div class="service-card" data-tilt data-reveal>
+      <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+      <h3>Brand Systems</h3>
+      <p>Visual identities and design languages built to scale across every surface.</p>
+      <div class="service-glow"></div>
+    </div>
+    <div class="service-card" data-tilt data-reveal>
+      <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+      <h3>Performance</h3>
+      <p>Lighthouse-grade optimization so every cinematic detail still loads instantly.</p>
+      <div class="service-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS / WORK ===================== -->
+<section class="work" id="work">
+  <div class="section-head">
+    <span class="section-tag" data-reveal>03 — Selected Work</span>
+    <h2 class="section-title" data-reveal>Projects that pushed<br>the boundary of the browser.</h2>
+    <div class="work-filters" data-reveal>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="product">Product</button>
+      <button class="filter-btn" data-filter="brand">Brand</button>
+    </div>
+  </div>
+
+  <div class="work-rail-wrap">
+    <div class="work-rail" id="workRail">
+      <article class="work-card" data-cat="web">
+        <div class="work-media" style="--c1:#00F5FF;--c2:#7B61FF;"><span>01</span></div>
+        <div class="work-info">
+          <h3>Lumen OS</h3>
+          <p>Web Platform</p>
+        </div>
+      </article>
+      <article class="work-card" data-cat="product">
+        <div class="work-media" style="--c1:#7B61FF;--c2:#FF4D8D;"><span>02</span></div>
+        <div class="work-info">
+          <h3>Aether Finance</h3>
+          <p>Product Design</p>
+        </div>
+      </article>
+      <article class="work-card" data-cat="brand">
+        <div class="work-media" style="--c1:#FF4D8D;--c2:#00F5FF;"><span>03</span></div>
+        <div class="work-info">
+          <h3>Volta Motors</h3>
+          <p>Brand Identity</p>
+        </div>
+      </article>
+      <article class="work-card" data-cat="web">
+        <div class="work-media" style="--c1:#00F5FF;--c2:#FF4D8D;"><span>04</span></div>
+        <div class="work-info">
+          <h3>Orbital Labs</h3>
+          <p>Web Experience</p>
+        </div>
+      </article>
+      <article class="work-card" data-cat="product">
+        <div class="work-media" style="--c1:#7B61FF;--c2:#00F5FF;"><span>05</span></div>
+        <div class="work-info">
+          <h3>Nexus Health</h3>
+          <p>Product Design</p>
+        </div>
+      </article>
+      <article class="work-card" data-cat="brand">
+        <div class="work-media" style="--c1:#FF4D8D;--c2:#7B61FF;"><span>06</span></div>
+        <div class="work-info">
+          <h3>Solis Energy</h3>
+          <p>Brand Identity</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section class="skills" id="skills">
+  <div class="section-head">
+    <span class="section-tag" data-reveal>04 — Core Expertise</span>
+    <h2 class="section-title" data-reveal>Precision across the<br>entire design stack.</h2>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-ring" data-value="96" data-reveal>
+      <svg viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="60" class="ring-bg"/>
+        <circle cx="70" cy="70" r="60" class="ring-fg" style="--col:#00F5FF"/>
+      </svg>
+      <div class="skill-info"><span class="skill-num">0</span><small>%</small></div>
+      <p>UI / UX Design</p>
+    </div>
+    <div class="skill-ring" data-value="92" data-reveal>
+      <svg viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="60" class="ring-bg"/>
+        <circle cx="70" cy="70" r="60" class="ring-fg" style="--col:#7B61FF"/>
+      </svg>
+      <div class="skill-info"><span class="skill-num">0</span><small>%</small></div>
+      <p>Motion &amp; GSAP</p>
+    </div>
+    <div class="skill-ring" data-value="88" data-reveal>
+      <svg viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="60" class="ring-bg"/>
+        <circle cx="70" cy="70" r="60" class="ring-fg" style="--col:#FF4D8D"/>
+      </svg>
+      <div class="skill-info"><span class="skill-num">0</span><small>%</small></div>
+      <p>WebGL / 3D</p>
+    </div>
+    <div class="skill-ring" data-value="94" data-reveal>
+      <svg viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="60" class="ring-bg"/>
+        <circle cx="70" cy="70" r="60" class="ring-fg" style="--col:#00F5FF"/>
+      </svg>
+      <div class="skill-info"><span class="skill-num">0</span><small>%</small></div>
+      <p>Front-End Eng.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials" id="testimonials">
+  <div class="section-head">
+    <span class="section-tag" data-reveal>05 — Client Voices</span>
+    <h2 class="section-title" data-reveal>Trusted by teams who<br>refuse to ship ordinary.</h2>
+  </div>
+
+  <div class="testi-wrap" data-reveal>
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-card">
+        <div class="testi-quote">"Novara didn't just design our product — they redefined how our users feel about it. The launch broke every engagement metric we had."</div>
+        <div class="testi-person">
+          <div class="testi-avatar">AK</div>
+          <div><strong>Anika Kapoor</strong><span>VP Product, Lumen OS</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"The level of craft is unreal. Every micro-interaction felt intentional. Our investors thought we'd hired a 50-person agency."</div>
+        <div class="testi-person">
+          <div class="testi-avatar">RM</div>
+          <div><strong>Rohan Mehta</strong><span>Founder, Aether Finance</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"From the first call to launch day, this was the smoothest, most cinematic design process we've ever experienced."</div>
+        <div class="testi-person">
+          <div class="testi-avatar">SL</div>
+          <div><strong>Sara Lin</strong><span>CMO, Volta Motors</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-dots" id="testiDots"></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="contact-glow"></div>
+  <div class="section-head">
+    <span class="section-tag" data-reveal>06 — Start a Project</span>
+    <h2 class="section-title" data-reveal>Let's build something<br>unforgettable.</h2>
+  </div>
+
+  <div class="contact-grid">
+    <form class="contact-form" id="contactForm" data-reveal novalidate>
+      <div class="field">
+        <input type="text" id="fName" required placeholder=" ">
+        <label for="fName">Your Name</label>
+        <span class="field-error">Please enter your name</span>
+      </div>
+      <div class="field">
+        <input type="email" id="fEmail" required placeholder=" ">
+        <label for="fEmail">Email Address</label>
+        <span class="field-error">Please enter a valid email</span>
+      </div>
+      <div class="field">
+        <input type="text" id="fBudget" placeholder=" ">
+        <label for="fBudget">Project Budget</label>
+      </div>
+      <div class="field">
+        <textarea id="fMessage" required rows="4" placeholder=" "></textarea>
+        <label for="fMessage">Tell us about your project</label>
+        <span class="field-error">Please tell us a little more</span>
+      </div>
+      <button type="submit" class="btn btn-primary magnetic full-w" data-cursor="link">
+        <span>Send Message</span>
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+
+    <div class="contact-success" id="contactSuccess">
+      <div class="success-ring"><i class="fa-solid fa-check"></i></div>
+      <h3>Message Sent</h3>
+      <p>We'll get back to you within one business day.</p>
+    </div>
+
+    <div class="contact-side" data-reveal>
+      <div class="contact-info">
+        <i class="fa-solid fa-envelope"></i>
+        <div><span>Email</span><a href="mailto:hello@novara.studio">hello@novara.studio</a></div>
+      </div>
+      <div class="contact-info">
+        <i class="fa-solid fa-phone"></i>
+        <div><span>Phone</span><a href="tel:+910000000000">+91 00000 00000</a></div>
+      </div>
+      <div class="contact-info">
+        <i class="fa-solid fa-location-dot"></i>
+        <div><span>Studio</span><a>Remote-first, Worldwide</a></div>
+      </div>
+      <div class="contact-socials">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="#home" class="nav-logo"><span class="logo-mark">N</span><span class="logo-text">OVARA</span></a>
+    <p>&copy; 2026 Novara Studio. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script (1).js"></script>
+</body>
+</html>
